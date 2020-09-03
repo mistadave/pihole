@@ -1,2 +1,2 @@
-./etc-dnsmasq.d
-./etc-pihole
+etc-dnsmasq.d/
+etc-pihole/
