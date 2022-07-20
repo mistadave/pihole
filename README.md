@@ -26,7 +26,7 @@ nameserver 127.0.0.1
 
 If possible, set the DNS option 6 in your router, which will advertise the DNS server to  your DHCP clients.
 Add here your PI-hole ip and you'll see the single clients instead of only your router as "client".
-If the client names aren't resolve, activate under `settings`.`dns`.Conditional forwarding`. 
+If the client names aren't resolve, activate under `settings > dns > Conditional forwarding`. 
 Set the flag, entry your local net in CIDR notation and the DHCP server, which is usually your router.
 
 Example:
