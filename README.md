@@ -22,6 +22,28 @@ sudo nano /etc/resolv.conf
 nameserver 127.0.0.1
 ```
 
+## Fix resolving clients
+
+If possible, set the DNS option 6 in your router, which will advertise the DNS server to  your DHCP clients.
+Add here your PI-hole ip and you'll see the single clients instead of only your router as "client".
+If the client names aren't resolve, activate under `settings > dns > Conditional forwarding`. 
+Set the flag, entry your local net in CIDR notation and the DHCP server, which is usually your router.
+
+Example:
+
+* 192.168.0.0/24 192.168.0.1 homenet.local
+
+If your router doesn't support this option, then you either have to choose your PI-Hole as DHCP server.
+
+## Config for FTL
+
+If you reach the rate limit, set the followign option in etc-pihole/pihole-FTL.conf
+
+```conf
+RATE_LIMIT=0/0
+REPLY_ADDR4=0.0.0.0
+```
+
 ## Adding Adlists
 
 Here is a list of sample which are good to use.
