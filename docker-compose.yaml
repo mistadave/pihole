@@ -28,25 +28,17 @@ services:
     environment:
       TZ: 'Europe/ZURICH'
       # WEBPASSWORD: 'set a secure password here or it will be random'
-<<<<<<< HEAD
       # FTLCONF_REPLY_ADDR4: '192.168.0.69'
       # currently not used
     # Volumes store your data between container upgrades
-=======
-      # Volumes store your data between container upgrades
->>>>>>> 28aafdb7899c50c154d9d2d7188483146ed36907
     volumes:
       - './etc-pihole/:/etc/pihole/'
       - './etc-dnsmasq.d/:/etc/dnsmasq.d/'
+      - ./memory.ini:/etc/php/7.4/cgi/conf.d/01-memory.ini:ro
     # Recommended but not required (DHCP needs NET_ADMIN)
     #   https://github.com/pi-hole/docker-pi-hole#note-on-capabilities
-<<<<<<< HEAD
     # Change SHM_size RAM for php to use
     shm_size: 128M
 #    cap_add:
 #      - NET_ADMIN
-=======
-    #    cap_add:
-    #      - NET_ADMIN
->>>>>>> 28aafdb7899c50c154d9d2d7188483146ed36907
     restart: unless-stopped
